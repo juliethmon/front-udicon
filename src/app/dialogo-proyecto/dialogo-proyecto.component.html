@@ -1,0 +1,23 @@
+
+<div>
+    <h1 mat-dialog-title>Proyecto</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+                <label>Seleccione estado</label>
+ 
+                    <div class="content-select">
+                        <select name="miselect" >
+                            <option [value]="item" *ngFor="let item of lista" >{{item}}</option>
+                            </select>
+                    </div>
+               
+                    <mat-form-field >
+                        <textarea class="textArea" matInput placeholder="Observaciones" style="line-height: 20px !important" ></textarea>
+                    </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button class="button"  mat-raised-button color="warn" mat-button (click)="cancelar()">Cancelar</button>
+        <button class="button"  mat-raised-button color="primary" mat-button [mat-dialog-close]="data" cdkFocusInitial>Confirmar</button>
+    </div>
+</div>

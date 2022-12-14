@@ -1,0 +1,37 @@
+
+<div>
+  
+  <form>
+    <h1>
+      Registrar 
+    </h1>
+    <label for="username">Nombre</label>
+    <input
+    type="email"
+    [(ngModel)]="name"
+    name="email"
+    placeholder="Nombre"
+    required="required"
+    id="username"
+  />
+   
+    <label for="password">Correo</label>
+    <input
+    type="text"
+    [(ngModel)]="email"
+    name="password"
+    placeholder="Correo"
+    required="required"
+    id="password"
+  />
+   <br>
+    <div class="buttons">
+      <button  type="submit" (click)="login()" >Registrar   </button>
+      <button  type="submit" (click)="cancelar()" >Cancelar   </button>
+    </div>
+    
+</form>
+</div>
+
+<simple-notifications></simple-notifications>
+

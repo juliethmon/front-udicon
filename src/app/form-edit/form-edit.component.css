@@ -1,0 +1,30 @@
+#ABC {
+  text-align: center;
+  background: #ffffff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact{
+    margin: 10%;
+    font-size: 100%;
+}
+
+#select{
+    margin: 10%;
+    font-size: 60%;
+}
+
+button{
+  margin-top: 25px;
+  width: 100%;
+  background-color: #FF7F50;
+  color: #fafafa;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}

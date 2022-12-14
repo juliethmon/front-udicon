@@ -1,0 +1,21 @@
+  
+  <h1 >Editar cita</h1>
+  <mat-form-field appearance="fill">
+          <label>Seleccione fecha de cita</label>
+          <input matInput  [(ngModel)] = "data.fecha_cita" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <label>Seleccione hora de cita</label>
+          <input [(ngModel)] = "data.hora_cita" type="time" id="appt" name="appt"
+          min="09:00" max="18:00" required
+          />
+          <button (click)="agendar()">Editar cita </button>
+          <button>Cancelar</button>
+        </mat-form-field>   
+        <simple-notifications></simple-notifications>
+        <div mat-dialog-actions class="buttons">
+        </div>
+        
+        
+
+        

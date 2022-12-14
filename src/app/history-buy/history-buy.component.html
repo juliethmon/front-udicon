@@ -1,0 +1,116 @@
+<app-admin-header>
+  <div *ngIf="validationCita">
+    <h3>Agendar cita</h3>
+    <mat-form-field appearance="fill">
+      <label>Seleccione fecha de cita</label>
+      <input matInput  [(ngModel)] = "fecha_cita" [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <label>Seleccione hora de cita</label>
+      <input [(ngModel)] = "hora_cita" type="time" id="appt" name="appt"
+      min="09:00" max="18:00" required
+      />
+      <button (click)="agendar()">Agendar cita</button>
+    </mat-form-field>   
+
+    </div>
+
+<div *ngIf="validationTypeHouse" class="row">
+ <div *ngFor="let house of houseTyoe" class="row row-cols-4 row-cols-md-4 row-cols-lg-1 g-1 col-md-2"> 
+  <mat-card class="example-card" (click)="pisos(house.id_house_type)">
+    <img mat-card-image [src]=house.image alt="Imagen del producto"  routerLinkActive="active">
+    <mat-card-header>
+        <div></div>
+        <mat-card-title routerLinkActive="active" >{{house.name}}</mat-card-title>
+      </mat-card-header>  
+</mat-card>
+ </div>
+</div>
+      
+<div *ngIf="validationPisos" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-4 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="ventana(elemento.id_elemento)" *ngIf="elemento.type=='PISOS'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+      
+ <div *ngIf="validationVentana" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-1 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="pared(elemento.id_elemento)" *ngIf="elemento.type=='VENTANAS'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+
+ <div *ngIf="validationPared" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-1 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="luces(elemento.id_elemento)" *ngIf="elemento.type=='PAREDES'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+
+ <div *ngIf="validationLuz" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-1 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="cocina(elemento.id_elemento)" *ngIf="elemento.type=='ILUMINACION'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+
+ <div *ngIf="validationCocina" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-1 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="comedor(elemento.id_elemento)" *ngIf="elemento.type=='COCINA'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+
+ <div *ngIf="validationComedor" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-1 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="sala(elemento.id_elemento)" *ngIf="elemento.type=='COMEDOR'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+
+ <div *ngIf="validationSala" class="row">
+  <div *ngFor="let elemento of elementos" class="row row-cols-1 row-cols-md-4 row-cols-lg-1 g-1 col-md-2">
+   <mat-card class="example-card" (click)="cita(elemento.id_elemento)" *ngIf="elemento.type=='SALA'">
+     <img mat-card-image [src]=elemento.image alt="Imagen del producto"  routerLinkActive="active">
+     <mat-card-header>
+         <div></div>
+         <mat-card-title routerLinkActive="active" >{{elemento.nombre_elemento}}</mat-card-title>
+       </mat-card-header>  
+ </mat-card>
+  </div>
+ </div>
+  </app-admin-header>
+  
+  
+  

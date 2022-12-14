@@ -1,0 +1,35 @@
+table {width: 100%;}
+.mat-row:nth-child(2n+1){
+    background-color: #ececec;
+  }
+  .mat-row:not(:nth-child(4n+1)){
+    background-color:#ffffff;
+  } 
+#title{
+  margin-top: 100px;
+}
+td{
+    text-align: left;
+}
+.top{
+  display: block;
+  position: relative;
+  width:100%;
+  text-align: center;
+}
+.top h2{
+  display: inline-block;
+}
+.top mat-icon{
+  float: right;
+  margin-top: 0.5%;
+  margin-right: 10%;
+  display: inline-block;
+  transform: scale(1.3);
+  color: green;
+  cursor: pointer;
+}
+.button{
+  color: #de3b00de;
+  background-color: #de8500de;
+}

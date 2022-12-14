@@ -1,0 +1,84 @@
+<div class="font">
+    <div id="ABC" class="container"> 
+        <div  class="card mt-4">
+          <div  class="card-body ">
+            <div  id="contact" class="card-title">
+              Contactanos
+            </div>
+            <!-- <form> -->
+            <div  class="form-group">
+              <input type="text" [(ngModel)]="selectedContact.firstName" placeholder="Nombre de contacto" class="form-control mt-2" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" [(ngModel)]="selectedContact.lastName" placeholder="Apellido" class="form-control mt-2" required>
+            </div>
+
+            <div class="form-group" id="select" >
+              <mat-form-field>
+                <mat-label>Tipo documento</mat-label>
+                <mat-select  [(ngModel)]="selectedContact.documentType">
+                  <mat-option>-- None --</mat-option>
+                  <mat-optgroup label="Documentos">
+                    <mat-option value="CC">CC</mat-option>
+                    <mat-option value="PA">PA</mat-option>
+                    <mat-option value="CE">CE</mat-option>
+                  </mat-optgroup>
+                  
+                </mat-select>
+              </mat-form-field>  
+            </div>
+
+            <div class="form-group">
+              <input type="number" [(ngModel)]="selectedContact.documentNumber" placeholder="Número de documento" class="form-control mt-2" required>
+            </div>
+
+            <div class="form-group" id="select" >
+              <mat-form-field>
+                <mat-label>Género</mat-label>
+                <mat-select  [(ngModel)]="selectedContact.genero">
+                  <mat-option>-- None --</mat-option>
+                  <mat-optgroup label="Documentos">
+                    <mat-option value="Femenino">Femenino</mat-option>
+                    <mat-option value="Masculino">Masculino</mat-option>
+                  </mat-optgroup>
+                  
+                </mat-select>
+              </mat-form-field>  
+            </div>
+
+            <div class="form-group">
+              <input type="email" [(ngModel)]="selectedContact.email" placeholder="Correo" class="form-control mt-2" required>
+            </div>
+            <div class="form-group">
+                <input type="number" [(ngModel)]="selectedContact.phone" placeholder="Telefono" class="form-control mt-2" required>
+              </div>
+              
+                <div class="form-group" id="select" >
+                <mat-form-field>
+                  <mat-label>Servicio de interés</mat-label>
+                  <mat-select  [(ngModel)]="selectedContact.ases_type">
+                    <mat-option>-- None --</mat-option>
+                    <mat-optgroup label="Asesorias">
+                      <mat-option value="Asesoria">Quiero una asesoría</mat-option>
+                    </mat-optgroup>
+                    <mat-optgroup label="Obras">
+                      <mat-option value="Obras civiles">Obras civiles</mat-option>
+                      <mat-option value="Obras arquitónicas">Obras arquitectónicas</mat-option>
+                    </mat-optgroup>
+                    
+                  </mat-select>
+                </mat-form-field>  
+              </div>
+              
+             
+            <button (click)="saveContact()" class="btn btn-primary mt-2">
+              Contactar
+            </button>
+          
+          </div>
+        </div>
+    </div>  
+
+    <simple-notifications></simple-notifications>
+</div>

@@ -1,0 +1,122 @@
+.custom-dialog-container .mat-dialog-container {
+  /* add your styles */
+  background-color: rgb(140, 47, 181);
+}
+.companyName{
+    font-size: 150%;
+    font-weight: bold;
+    justify-content: center;
+  }
+
+.mat-toolbar{
+  height: 7vh;
+}
+img{
+  width: 5%;
+}
+
+.mat-sidenav-container{
+  background-color: white;
+  min-height: 93vh !important;
+}
+
+a{
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+    color: rgb(0, 0, 0);
+}
+a:hover{
+  color: #000000;
+  background-color: #e392d7;
+}
+
+button{
+    font-size: 110%;
+    min-width: min-content;
+    color: #ffffff;
+}
+
+  .mat-sidenav-content{
+      font-size: 200%;
+      text-align: center;
+  }
+
+  .navBar{
+    background-color: #FF7F50;
+    height: 80px;
+  }
+
+  .push {
+    margin-left: auto;
+    display: flex;
+}
+
+  .push mat-icon{
+    margin-left: 20%;
+    margin-right: 20%;
+    transform: scale(1.3);
+}
+
+.push span{
+  transform: scale(1.3);
+}
+
+.notification{
+  display: flex;
+}
+
+.notification a{
+  width: 1.5%;
+  height: 3%;
+  color: #000000;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 80%;
+     background: #df0e0e;
+  position: absolute;
+  top: 8px;
+  font-size: 80%;
+}
+
+.notification span{
+  cursor: pointer;
+}
+
+::ng-deep button.mat-menu-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  /** set line height to desired height */
+  line-height: 18px;
+  /** set height to auto */
+  height: auto;
+  padding: 0 16px;
+  text-align: left;
+  text-decoration: none;
+  max-width: 100%;
+  position: relative;
+  background-color: #eb7d08e8;
+  font-size: 19px;
+}
+
+::ng-deep div.mat-menu-panel {
+  min-width: 112px;
+    /** set width to 500px */
+  max-width: 500px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 48px);
+  border-radius: 4px;
+  outline: 0;
+  color: aqua;
+}

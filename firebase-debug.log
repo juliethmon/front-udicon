@@ -1,0 +1,62 @@
+[debug] [2022-12-13T02:16:30.188Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T02:16:30.199Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-13T02:16:30.202Z] CLI Version:   11.18.0
+[debug] [2022-12-13T02:16:30.202Z] Platform:      win32
+[debug] [2022-12-13T02:16:30.203Z] Node Version:  v16.16.0
+[debug] [2022-12-13T02:16:30.208Z] Time:          Mon Dec 12 2022 21:16:30 GMT-0500 (hora estándar de Colombia)
+[debug] [2022-12-13T02:16:30.210Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T02:16:30.528Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T02:16:30.529Z] > authorizing via signed-in user (julieth.montana01@uptc.edu.co)
+[debug] [2022-12-13T02:16:30.529Z] [iam] checking project udicon-frontend for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-13T02:16:30.535Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/udicon-frontend:testIamPermissions [none]
+[debug] [2022-12-13T02:16:30.535Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/udicon-frontend:testIamPermissions x-goog-quota-user=projects/udicon-frontend
+[debug] [2022-12-13T02:16:30.536Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/udicon-frontend:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-13T02:16:31.355Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/udicon-frontend:testIamPermissions 200
+[debug] [2022-12-13T02:16:31.356Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/udicon-frontend:testIamPermissions {}
+[debug] [2022-12-13T02:16:31.357Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project udicon-frontend:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-12-13T02:16:31.362Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/udicon-frontend [none]
+[debug] [2022-12-13T02:16:31.939Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/udicon-frontend 403
+[debug] [2022-12-13T02:16:31.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/udicon-frontend {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-12-13T02:16:31.944Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-12-13T02:16:32.159Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project udicon-frontend. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-13T02:17:26.158Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T02:17:26.162Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2022-12-13T02:17:26.163Z] CLI Version:   11.18.0
+[debug] [2022-12-13T02:17:26.163Z] Platform:      win32
+[debug] [2022-12-13T02:17:26.163Z] Node Version:  v16.16.0
+[debug] [2022-12-13T02:17:26.165Z] Time:          Mon Dec 12 2022 21:17:26 GMT-0500 (hora estándar de Colombia)
+[debug] [2022-12-13T02:17:26.165Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T02:17:26.336Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T02:17:26.336Z] > authorizing via signed-in user (julieth.montana01@uptc.edu.co)
+[debug] [2022-12-13T02:17:26.345Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2022-12-13T02:17:27.000Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2022-12-13T02:17:27.002Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2022-12-13T13:45:35.399Z] TypeError: Cannot read properties of undefined (reading 'value')
+    at ListPrompt.getCurrentValue (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\inquirer\lib\prompts\list.js:153:53)
+    at C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\operators\map.js:10:37
+    at OperatorSubscriber._this._next (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\operators\OperatorSubscriber.js:33:21)
+    at OperatorSubscriber.Subscriber.next (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\Subscriber.js:51:18)
+    at C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\operators\take.js:15:32
+    at OperatorSubscriber._this._next (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\operators\OperatorSubscriber.js:33:21)
+    at OperatorSubscriber.Subscriber.next (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\Subscriber.js:51:18)
+    at Interface.handler (C:\Users\USUARIO\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rxjs\dist\cjs\internal\observable\fromEvent.js:59:31)
+    at Interface.emit (node:events:539:35)
+    at Interface.emit (node:domain:475:12)
+    at Interface._onLine (node:readline:487:10)
+    at Interface._line (node:readline:864:8)
+    at Interface._ttyWrite (node:readline:1216:14)
+    at ReadStream.onkeypress (node:readline:288:10)
+    at ReadStream.emit (node:events:539:35)
+    at ReadStream.emit (node:domain:475:12)
+[error] 
+[error] Error: An unexpected error has occurred.

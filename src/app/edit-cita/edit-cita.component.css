@@ -1,0 +1,93 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(67, 223, 0, 0.1);
+    box-shadow: 0 0 40px rgba(205, 86, 43, 0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    width: 95%;
+
+}
+form h3{
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 42px;
+    text-align: center;
+    color: #FF7F50;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 120%;
+    border : 10px solid rgba(176, 98, 37, 0.505);
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #ffffff;
+}
+button{
+    margin-top: 25px;
+    width: 100%;
+    background-color: #FF7F50;
+    color: #fafafa;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+img{
+    vertical-align: middle;
+    width: 30%;
+    }
+
+.mat-datepicker-toggle{
+  color: #d17f40;
+  }
+
+  .mat-form-field{
+    background-color: #ffe2cb;
+  }
+
+  .mat-datepicker{
+    color: #d17f40;
+  }
+
+  label{
+    -webkit-text-stroke: 0.3px rgb(0, 0, 0); /* width and color */
+
+    color:#FF7F50;
+  }

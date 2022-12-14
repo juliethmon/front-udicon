@@ -1,0 +1,28 @@
+
+
+<div class="service-5">
+    
+    <div class="container">
+        <h1>Caracteristicas</h1>
+        <!-- Row  -->
+        <div class="row"> 
+            <!-- Column -->
+            <div class="col-md-4 " *ngFor="let charac of charactaristics">
+                <div id="card"  class="card card-shadow border-0 mb-4">
+                    <div>
+                        <div *ngIf="charac.image != ''">
+                            <img src="{{charac.image}}" class="img-fluid" alt="Responsive image" >
+                        </div>
+                        <div   >
+                            <h2>
+                               {{charac.name}}
+                            </h2>
+                            <p>{{charac.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

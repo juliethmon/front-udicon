@@ -1,0 +1,51 @@
+<link href="http://fonts.cdnfonts.com/css/bogart" rel="stylesheet">
+<div> 
+    <mat-toolbar class="navBar">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <img [src]="imageSrc" [alt]="imageAlt" />
+      <a mat-button class="companyName" routerLink="/Home" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ">
+       
+        <span>UDICON CONSTRUCTORA</span>
+      </a>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+       
+        
+        <button mat-button routerLink="/Container">Inicio</button>
+      
+        <a mat-button routerLink="/Home">Acerca de</a>
+    
+        
+        <a mat-button routerLink="/Login">Login</a>
+      </div>
+  
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+  
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+          <button mat-button [matMenuTriggerFor]="container">Container</button>
+          <mat-menu #container="matMenu" xPosition="after">
+            <button mat-menu-item routerLink="/Container">Container1</button>
+            <button mat-menu-item routerLink="/Container">Container2</button>
+          </mat-menu>
+          
+          <a mat-button routerLink="/Login">Login</a>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+
+        <app-image-slider type = "{{type}}"></app-image-slider>
+        <app-product-characteristics type = "{{type}}"></app-product-characteristics>
+        <app-form></app-form>
+        <app-product-card></app-product-card>
+        <app-footer></app-footer>
+       
+      </mat-sidenav-content> 
+    </mat-sidenav-container>
+    <app-social-media></app-social-media>
+  </div>
