@@ -4,7 +4,7 @@ export class Citas {
         public fecha_cita : Date,
         public hora_cita: string,
         public user_name: string,
-        
+        public costo:number
        ){ 
        }
 }

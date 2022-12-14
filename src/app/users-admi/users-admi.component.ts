@@ -13,7 +13,7 @@ import { UserLogin } from '../user-login';
   styleUrls: ['./users-admi.component.css'],
 })
 export class UsersAdmiComponent implements OnInit {
-  columnas: string[] = ['Id', 'Usuario', 'Nombre', 'Correo', 'Acciones'];
+  columnas: string[] = ['Id', 'Usuario', 'Nombre', 'Correo', 'Costo','Acciones'];
   datos: Citas[] = [];
   constructor(public http: HttpClient, public dialog: MatDialog) {}
 
@@ -46,7 +46,7 @@ export class UsersAdmiComponent implements OnInit {
   editUser(id: number) {
     const dialogo1 = this.dialog.open(EditCitaComponent, {
       panelClass: 'my-dialog',
-      data: new Citas(this.datos[id].id_cita, new Date(), '', ''),
+      data: new Citas(this.datos[id].id_cita, new Date(), '', '',0),
       height: '50%',
       width: '300px',
     });

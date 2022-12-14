@@ -47,6 +47,8 @@ export class HistoryBuyComponent implements OnInit {
   estrellasComedor = 0;
   estrellasSala = 0;
 
+  countDays = 0;
+
   constructor(public http: HttpClient, public service: NotificationsService, public dialog: MatDialog, private router: Router) {}
 
   ngOnInit(): void {
@@ -83,6 +85,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
   ventana(id: number){
+    this.countTotal(id);
     const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -98,6 +101,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
   pared(id: number){
+    this.countTotal(id);
     const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -113,6 +117,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
   luces(id: number){
+    this.countTotal(id);
      const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -128,6 +133,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
   cocina(id: number){
+    this.countTotal(id);
     const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -143,6 +149,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
     comedor(id: number){
+      this.countTotal(id);
        const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -158,6 +165,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
   sala(id: number){
+    this.countTotal(id);
      const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -173,6 +181,7 @@ export class HistoryBuyComponent implements OnInit {
   }
 
   async cita(id: number){
+    this.countTotal(id);
     const dialogo = this.dialog.open(StarsComponent, {
       height: '30%',
       width: '30%',
@@ -180,7 +189,7 @@ export class HistoryBuyComponent implements OnInit {
      });
 
     dialogo.afterClosed().subscribe(result => {
-      this.onSuccess('La cita fue agendada correctamente');
+      this.onSuccess('De acuerdo a tu selección tu asesoria tardará al rededor de ' + this.countDays + 'sesiones y cada una de estas tendrá un costo de $180.000');      
       this.estrellasSala = result;
       this.salaSeleccionada = id;
       this.validationSala = false;
@@ -208,6 +217,7 @@ export class HistoryBuyComponent implements OnInit {
           stars_cocina: this.estrellasCocina,
           stars_comedor: this.estrellasComedor,
           stars_sala: this.estrellasSala,
+          total : this.countDays*180000
         };
         console.log('entro a asesorias', GlobalConstants.API + 'createCita');
         this.http
@@ -224,6 +234,12 @@ export class HistoryBuyComponent implements OnInit {
     });
 
     this.router.navigate(['/ProjectHistory']);
+  }
+
+  countTotal(id:  number){
+    this.elementos.map((elemento)=>{
+        if(elemento.id_elemento === id) this.countDays += elemento.advisoryNumber
+    })
   }
 
 
@@ -248,7 +264,7 @@ export class HistoryBuyComponent implements OnInit {
   onSuccess(message: any) {
     this.service.success('Completado', message, {
       postition: ['bottom', 'right'],
-      timeOut: 2000,
+      timeOut: 6000,
       animate: 'fade',
       showProgress: true,
     });

@@ -5,7 +5,8 @@ export class Elemento {
         public image : string,
         public type : string,
         public puntuacion : number,
-       ){ 
+        public advisoryNumber : number
+        ){ 
         
        }
 }

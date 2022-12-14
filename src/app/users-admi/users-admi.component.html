@@ -28,6 +28,10 @@
           <td mat-cell *matCellDef="let articulo"> {{articulo.hora_cita}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="Costo">
+          <th mat-header-cell *matHeaderCellDef> Costo </th>
+          <td mat-cell *matCellDef="let articulo"> {{articulo.costo}} </td>
+        </ng-container>
         
       
         <ng-container matColumnDef="Acciones">
